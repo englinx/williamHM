@@ -1,0 +1,11 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^rutas/newCoordenada/(.*)/(.*)/$   RestController.php?view=newCoordenada&latitud=$1&longitud=$2 [nc,qsa]
+RewriteRule ^rutas/getCoordenada/([0-9]+)/$   RestController.php?view=getCoordenada&id=$1 [nc,qsa]
+RewriteRule ^rutas/deleteCoordenada/([0-9]+)/$   RestController.php?view=deleteCoordenada&id=$1 [nc,qsa]
+RewriteRule ^rutas/getAllEventos/$   RestController.php?view=getAllEventos [nc,qsa]
+RewriteRule ^rutas/getEventoById/([0-9]+)/$   RestController.php?view=getEventoById&porcenRiesgo=$1&idTipo=$2&idCoordenada=$3 [nc,qsa]
+
